@@ -1,0 +1,68 @@
+<div class="widget-box" id="recent-box" ng-controller="tasksController">
+<div class="widget-header header-color-blue">
+<div class="row">
+<div class="col-sm-4">
+<h4 class="bigger lighter">
+	<i class="glyphicon glyphicon-align-justify"></i>&nbsp;
+	{{activeTask.project}} Task #{{activeTask.id}} &nbsp;&nbsp;Status: {{activeTask.status}}
+</h4> 
+</div>
+<div class="col-lg-2" ng-controller="getSessionParam">
+	<a href="#/updateTask?id={{activeTask.id}}">
+		<button class="btn btn-default mTop" type="submit" ng-class="{hideButton:role !='admin'}">Update Task</button>
+	</a>
+</div>
+<div class="col-lg-6">
+	<div class="row"  ng-controller="getParam">
+		<div class="col-lg-3" ng-controller="getSessionParam">
+			<a href="#/dashboard">
+				<button class="btn btn-default mTop" type="submit" ng-class="{hideButton:role !='admin'}">Dashboard</button>
+			</a>
+		</div>
+		<div class="col-lg-3 mTop">
+			<button  type="button" class="btn btn-warning btn-md" ng-click="changeStatus(activeTask.id)"></span> Change status <i class="glyphicon glyphicon glyphicon-arrow-right"></i></button>
+		</div>
+		<div class="col-lg-1"></div>
+		<div class="col-lg-4 mTop">		
+			<select id='statusListUser'  name="prior" class="form-control " >
+	            <option ng-repeat="status in statusTask " >{{status.name}}</option>  
+	        </select></div>
+		</div>
+		<div class="col-lg-1"></div>
+	</div>
+</div></div>
+<div class="widget-body ">
+
+<div class="task">
+<div class="row"><div class="col-lg-12 bg-primary "><p class="mTop">Parent Task</p></div></div>
+    <div id='openTask'></div>
+</div>
+<div class="row">
+	<div class="col-lg-11 dotterLine"></div>
+</div><br/>
+
+<div ng-controller="getComment" >
+	<div class="row mBot" ng-repeat='comment in comments'>
+		<div class="col-lg-12 "  >
+			<div class="bs-example"><p>User: {{comment.user}} &nbsp;&nbsp;&nbsp;&nbsp;Role: {{comment.role}}</p>
+			    <div class="well">{{comment.comment}} </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+	
+	<div class="mTop">
+		<button ng-click="addNewClicked=!addNewClicked;" class="btn btn-sm btn-warning header-elements-margin"><i class="glyphicon  glyphicon-plus"></i>&nbsp;Add New Comment</button>
+		<form ng-init="addNewClicked=false; " ng-if="addNewClicked"  class="add-task">
+			<textarea class="form-control" ng-model='comment.text'></textarea>
+			<button class="btn btn-default mTop" type="submit" ng-click="addComment(comment)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add New Comment</button>
+			
+		</form>
+	</div>
+
+	
+</div>
+</div>
+

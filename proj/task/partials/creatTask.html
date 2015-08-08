@@ -1,0 +1,56 @@
+<div class="widget-box" id="recent-box" ng-controller="tasksController">
+<div class="widget-header header-color-blue">
+<div class="row">
+<div class="col-sm-3">
+<h4 class="bigger lighter">
+	<i class="glyphicon glyphicon-align-justify"></i>&nbsp;
+	TASK MANAGER
+</h4>
+</div>
+<div class="col-sm-3">
+	
+</div>
+<div class="col-sm-3">
+
+</div>
+<div class="col-sm-3">
+
+	<a href="#/dashboard">
+		<button class="btn btn-default mTop" type="submit" ><i class="glyphicon glyphicon-arrow-left"></i> Return Dashboard</button>
+	</a>
+</div>
+</div></div>
+<div class="widget-body ">
+<form ng-init="addNewClicked=true; "  id="newTaskForm" class="add-task">
+	<div class="form-actions">
+
+		<input type="text" class="form-control" ng-model="creatTask.name" placeholder="Name Task" ng-focus="addNewClicked">
+		<div class="row"  ng-controller="getParam">
+			<div class="col-sm-3 mTop">
+				<select id="priorList"  name="prior" class="form-control " >
+		            <option ng-repeat="prior in priors "  ng-model="creatTask.prior">{{prior.name}}</option>  
+		        </select>
+            </div>
+			<div class="col-sm-3 mTop">
+				<select id="projectList" name="project" class="form-control" >
+                    <option ng-repeat="project in projects "  ng-model="creatTask.project">{{project.name}}</option>  
+                </select>
+            </div>
+			<div class="col-sm-3 mTop">
+				<select id="userList"  name="user" class="form-control" >
+                    <option ng-repeat="user in users "  ng-model="creatTask.user">{{user.login}}</option>  
+                </select>
+            </div>		
+		</div>
+		<div  ng-controller="wysiwygeditor" class="mTop">
+		  <div text-angular="text-angular" name="htmlcontent" ng-model="creatTask.text" ta-disabled='disabled'></div>  
+		</div>
+		<button class="btn btn-default" type="submit" ng-click="addTask(creatTask)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add New Task</button><br>
+
+	</div>
+</form>
+
+
+</div>
+</div>
+

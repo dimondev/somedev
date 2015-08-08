@@ -1,0 +1,139 @@
+#container {
+	background-image: url(img/nature.png);
+	width: 1000px;
+	height: 625px;
+}
+
+#leftBox {
+	float: left;
+	width: 100px;
+	height: 225px;
+	margin-top: 400px;
+	margin-left: 2px;
+}
+
+#middleBox {
+	float: left;
+	width: 480px;
+	height: 175px;
+	margin-top: 450px;
+}
+
+#message, #endMessage {
+	text-align: center;
+	margin-top: -55px;
+	display: none;
+	width: 70px;
+	height: 55px;
+	background-image: url(img/message.png);
+}
+
+#rightBox {
+	float: left;
+	width: 100px;
+	height: 225px;
+	margin-top: 400px;
+}
+
+#wolf {
+	background-image: url(img/wolf.png);
+	width: 70px;
+	height: 70px;
+}
+
+#wolf:hover {
+	background-image: url(img/wolfLight.png);
+	cursor: pointer;
+}
+
+#goat {
+	background-image: url(img/goat.png);
+	width: 70px;
+	height: 70px;
+}
+
+#goat:hover {
+	background-image: url(img/goatLight.png);
+	cursor: pointer;
+}
+
+#cabbage {
+	background-image: url(img/cabbage.png);
+	width: 70px;
+	height: 70px;
+}
+
+#cabbage:hover {
+	background-image: url(img/cabbageLight.png);
+	cursor: pointer;
+}
+
+#boat {
+	background-image: url(img/boat.png);
+	width: 150px;
+	height: 90px;
+}
+
+#boatChair {
+	float: right;
+	width: 75px;
+	height: 70px;
+}
+
+#boatMove {
+	float: left;
+	width: 75px;
+	height: 90px;
+}
+
+#boatMove:hover {
+	cursor: pointer;
+	background-image: url(img/boatLight.png);
+}
+
+#mainGamePage {
+	width: 1000px;
+	height: 625px;
+	background-image: url(img/startPage.png);
+}
+
+#startGame {
+	position: relative;
+	left: 616px;
+	top: 243px;
+	width: 150px;
+	height: 140px;
+	
+}
+
+#startGame:hover {
+	cursor: pointer;
+	background-image: url(img/startGame.png);
+}
+
+#exitGame {
+	position: relative;
+	left: 68px;
+	top: 310px;
+	width: 110px;
+	height: 40px;
+}
+
+#exitGame:hover {
+	cursor: pointer;
+	background-image: url(img/exitGame.png);
+}
+
+#exit {
+	float: left;
+	margin-top: 450px;
+	margin-left: 68px;
+	width: 110px;
+	height: 40px;
+}
+
+#exit:hover {
+	cursor: pointer;
+	background-image: url(img/exitGame.png);
+}
+

@@ -1,0 +1,113 @@
+
+<div class="widget-box" id="recent-box" ng-controller="tasksController">
+	<div class="widget-header header-color-blue">
+		<div class="row">
+			<div class="col-sm-3">
+			<h4 class="bigger lighter">
+				<i class="glyphicon glyphicon-align-justify"></i>&nbsp;
+				TASK MANAGER
+			</h4>
+			</div>
+			<div class="col-sm-3">
+				
+			</div>
+			<div class="col-sm-3">
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-7"><h4 class="bigger lighter" >Add child task : </h4></div>
+					<div id="checkTask" class="col-sm-2"><input type="checkbox" ng-model="checked"></div>
+				</div>
+			</div>
+			<div class="col-lg-3">
+
+				<a href="#/dashboard">
+					<button class="btn btn-default mTop" type="submit" ><i class="glyphicon glyphicon-arrow-left"></i> Return Dashboard</button>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="widget-body ">
+		<form  method="post" ng-hide="checked">
+			<h4 class="bigger lighter" align="center">				
+				Update Task
+			</h4>
+			<div class="form-actions">
+			
+				<input type="text" class="form-control" ng-model="tasks[0].name" placeholder="Name Task"  >
+				<div class="row"  ng-controller="getParam">				
+					<div class="col-sm-3 mTop">
+						<select id="priorList"  name="prior" class="form-control " >
+							<option>{{tasks[0].priority}}</option>
+	                        <option ng-repeat="prior in priors " >{{prior.name}}</option>  
+	                    </select>
+	                </div>
+					<div class="col-sm-3 mTop">
+						<select id="projectList" name="project" class="form-control" >
+							<option>{{tasks[0].project}}</option>
+	                        <option ng-repeat="project in projects "  >{{project.name}}</option>  
+	                    </select>
+	                </div>
+					<div class="col-sm-3 mTop">
+						<select id="userList"  name="user" class="form-control" >
+							<option>{{tasks[0].access}}</option>
+	                        <option ng-repeat="user in users "  >{{user.login}}</option>  
+	                	</select>
+	                </div>	
+			        <div class="col-sm-3 mTop">
+			        	<select id="statusList"  name="status" class="form-control" >
+							<option>{{tasks[0].status}}</option>
+	                        <option ng-repeat="status in statusTask "  >{{status.name}}</option>  
+	                    </select>
+			        </div>	
+				</div>
+
+	    		<div  ng-controller="wysiwygeditor" class="mTop">
+				  	<div text-angular="text-angular" name="htmlcontent" ng-model="tasks[0].task_text" ta-disabled='disabled'></div>  
+				</div>
+			
+				<button class="btn btn-default mTop" type="submit" ng-click="updateTask(tasks)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Update Task</button><br>
+		
+			</div>			
+		</form>
+
+		<form  method="post" ng-show="checked">
+			<div class="form-actions">
+				<h4 class="bigger lighter" align="center">				
+					Add child task for task #{{tasks[0].id}}
+				</h4>
+				<input type="text" class="form-control" ng-model="childTask.name" placeholder="Name Task" >
+				<div class="row"  ng-controller="getParam">				
+					<div class="col-sm-3 mTop">
+						<select id="priorListChild"  name="prior" class="form-control " >
+	                        <option ng-repeat="prior in priors " >{{prior.name}}</option>  
+	                    </select>
+	                </div>
+					<div class="col-sm-3 mTop">
+						<select id="projectListChild" name="project" class="form-control" >
+	                        <option ng-repeat="project in projects "  >{{project.name}}</option>  
+	                    </select>
+	                </div>
+					<div class="col-sm-3 mTop">
+						<select id="userListChild"  name="user" class="form-control" >
+	                        <option ng-repeat="user in users "  >{{user.login}}</option>  
+	                	</select>
+	                </div>	
+			        <div class="col-sm-3 mTop">
+			        	<select id="statusListChild"  name="status" class="form-control" >
+	                        <option ng-repeat="status in statusTask "  >{{status.name}}</option>  
+	                    </select>
+			        </div>	
+				</div>
+
+	    		<div  ng-controller="wysiwygeditor" class="mTop">
+				  	<div text-angular="text-angular" name="htmlcontent1" ng-model="childTask.text" ta-disabled='disabled'></div>  
+				</div>
+			
+				<button class="btn btn-default mTop" type="submit" ng-click="addChildTask(childTask,tasks)"><i class="glyphicon glyphicon-plus"></i>&nbsp;add child task</button><br>
+		
+			</div>			
+		</form>
+	</div>
+</div>
+
