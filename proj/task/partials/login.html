@@ -1,54 +1,80 @@
 
 <div class="page-content" >
 
-<div class="row">
-<div class="space-6"></div>
-<div class="col-sm-10 col-sm-offset-1">
-    <div id="login-box" class="login-box visible widget-box no-border">
-        <div class="widget-body">
-            <div class="widget-main">
-                
-                <form name="loginForm" class="form-horizontal" role="form" ng-controller="authCtrl">
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="Login"> Login  </i></label>
-                        <div class="col-sm-7">
-                           <span class="block input-icon input-icon-right">
-                                <input type="text" class="form-control" placeholder="Login" name="login" ng-model="login.login" required focus/>
-                                
-                            </span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="password"> Password </label>
-                        <div class="col-sm-7">
-                           <span class="block input-icon input-icon-right">
-                                <input type="password" class="form-control" placeholder="Password" name="password" ng-model="login.password" required/>
-                                
-                            </span>
-                        </div>
-                    </div>
-                    <div class="space"></div>
-                     <div class="clearfix">
-                        <div class="row">
-                         <label class="col-sm-3 control-label no-padding-right"> </label>
-                            <div class="col-sm-7">
-                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" ng-click="doLogin(login)" data-ng-disabled="loginForm.$invalid">
-                                    <i class="ace-icon fa fa-key"></i>
-                                    Login 
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-                
-                
-            </div><!-- /widget-main -->
-
-            
-        </div><!-- /widget-body -->
-    </div><!-- /login-box -->
-
-</div><!-- /position-relative -->
-</div>
+    <div class="row">
+        <div class="space-6"></div>
+            <div class="col-sm-10 col-sm-offset-1">
+                <div id="login-box" class="login-box visible widget-box no-border">
+                    <div class="widget-body">
+                        <div class="widget-main">                        
+                            <form name="loginForm" class="form-horizontal" role="form" ng-controller="authCtrl">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="Login"> Login  </i></label>
+                                    <div class="col-sm-7">
+                                       <span class="block input-icon input-icon-right">
+                                            <input type="text" class="form-control" placeholder="Login" name="login" ng-model="login.login" required focus/>                                        
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="password"> Password </label>
+                                    <div class="col-sm-7">
+                                       <span class="block input-icon input-icon-right">
+                                            <input type="password" class="form-control" placeholder="Password" name="password" ng-model="login.password" required/>                                        
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="space"></div>
+                                 <div class="clearfix">
+                                    <div class="row">
+                                     <label class="col-sm-3 control-label no-padding-right"> </label>
+                                        <div class="col-sm-7">
+                                            <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" ng-click="doLogin(login)" data-ng-disabled="loginForm.$invalid">
+                                                <i class="ace-icon fa fa-key"></i>
+                                                Login 
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div><!-- /widget-main -->
+                    </div><!-- /widget-body -->
+                </div><!-- /login-box -->
+            </div><!-- /position-relative -->
+    </div><br>
+    <div class="row">
+    <div class="col-md-4"></div>
+        <div class="col-md-4">
+           <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Role</th>
+                  <th>Login</th>
+                  <th>Password</th>                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Admin</td>
+                  <td>dima</td>
+                  <td>123</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>programmer</td>
+                  <td>prog</td>
+                  <td>123</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>tester</td>
+                  <td>test</td>
+                  <td>123</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
 </div><!-- /.page-content -->
