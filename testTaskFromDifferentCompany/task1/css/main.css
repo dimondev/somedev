@@ -1,0 +1,15 @@
+.border div{
+	border:1px solid #000;
+}
+
+.block-1 {
+	margin-top:50px;
+}
+
+.block-1 img {
+	width: 100%;
+}
+
+.btn-info {
+	margin-left: 28%;
+}
