@@ -121,15 +121,3 @@ a:visited, a {
     background: linear-gradient(90deg, rgb(1, 102, 135) 0%, rgb(88, 189, 232) 100%)!important;
     color: #fff!important;
 }
-
-@media screen and (max-width: 1366px) {
-    .block-4 {
-        font-size: 13px!important;
-    }
-
-    .bl-4 p {
-        padding-top: 50px;    
-        font-size: 35px;
-        
-    }
-}
